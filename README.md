@@ -1,1 +1,1 @@
-# rock-paper-scissors
+Simple rock paper scissors game that can be played from the console.
