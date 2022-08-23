@@ -5,64 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
 </head>
 <body>
-    <script>
-        let scoreComputer = 0;
-        let scorePlayer = 0;
-        
-        function getComputerChoice () {
-            const items = ["rock", "paper", "scissors"];
-            return items[Math.floor(Math.random()*items.length)];   
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            
-            if ((computerSelection === "rock" && playerSelection === "scissors") || (computerSelection === "scissors" && playerSelection === "paper") || (computerSelection === "paper" && playerSelection === "rock") ) {
-                console.log("You choose:", playerSelection, "Computer chooses:", computerSelection)
-                console.log (`You lose! ${computerSelection} beats ${playerSelection}!`);
-                scoreComputer++;
-            } else if ((computerSelection === "rock" && playerSelection === "paper") || (computerSelection === "scissors" && playerSelection === "rock") || (computerSelection === "paper" && playerSelection === "scissors")) {
-                console.log("You choose:", playerSelection, "Computer chooses:", computerSelection)
-                console.log (`You win! ${playerSelection} beats ${computerSelection}!`);
-                scorePlayer++;
-            }else {
-                console.log("You choose:", playerSelection, "Computer chooses:", computerSelection)
-                console.log("Tie!");
-            }
-        }
-        
-        function game() {
-            for(let i = 0; i < 5; i++) {
-                let playerSelection = prompt("Enter your choice", "Rock, paper or scissors").toLowerCase();
-                let computerSelection = getComputerChoice();
-                playRound(playerSelection, computerSelection);
-                console.log("Your Score: ", scorePlayer, "Computer's Score: ", scoreComputer)
-            }
-        }
-
-        game();
-        if(scoreComputer > scorePlayer) {
-            console.log ("Game over! Computer won!");
-        } else if (scorePlayer > scoreComputer){
-            console.log("You won!");
-        }else {
-            console.log("Tie! Time for Golden Round! Winner takes it all!");
-            goldenRound();
-        }
-
-        function goldenRound() {
-            do {
-                computerSelection = getComputerChoice();
-                playerSelection = prompt("Enter your choice", "Rock, paper or scissors").toLowerCase();
-                playRound(playerSelection, computerSelection);
-                console.log("Your Score: ", scorePlayer, "Computer's Score: ", scoreComputer)
-            } 
-            while(scoreComputer === scorePlayer);
-        }
+    <div id="container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="score">
+            <div class="computer">
+                <p>Computer:</p>
+                <img src="img/number0.png" alt="">
+            </div>
+            <div class="player">
+                <p>Player:</p>
+                <img src="img/number0.png" alt="">
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="rock button">Rock</button>
+            <button class="paper button">Paper</button>
+            <button class="scissors button">Scissors</button>
+        </div>
+    </div>
     
-
-    </script>
-    
+    <script src="script.js"></script>  
 </body>
 </html>
