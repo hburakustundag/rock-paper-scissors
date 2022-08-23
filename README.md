@@ -1,1 +1,1 @@
-Simple rock paper scissors game that can be played from the console.
+Simple rock paper scissors game. The first one reaches to 5 wins the game.
